@@ -1,0 +1,18 @@
+Os arquivos sinal.mat e sinalSD.mat contém sinais amostrados a uma taxa de aproximadamente 2,8MHz (o valor exato está nos arquivos).  Em ambos os casos a banda do sinal de interesse é de fM=16
+kHz.
+
+Para economizar espaço, o sinal está armazenado como um conjunto de números inteiros.  Sabendo que a quantização foi feita com B=5
+ bits e que a faixa do sinal é −1≤x<1
+, como você deve fazer para recuperar os valores corretos?
+
+Os sinais são bem longos, não tente desenhar o gráfico dos sinais completos - se quiser ver o gráfico, plote um trecho pequeno apenas (em Julia, use plot(x[1:100000], por exemplo).
+
+Para ouvir os sinais, também evite tentar ouvir o sinal original - use por exemplo wavplay(x[1:M:end], fs/M), com um valor de M
+ de pelo menos 30.
+
+O sinal do arquivo sinal.mat foi amostrado com 5 bits.   Crie um filtro para aumentar a resolução do sinal para aproximadamente 3 bits a mais, conforme visto em aula, sem usar realimentação.  
+
+Já o sinal do arquivo sinalSD.mat foi amostrado com 1 bit apenas, usando a estrutura do conversor Σ−Δ
+.  Complete o conversor A/D para poder ouvir o sinal corretamente.
+
+Procure calcular o número de bits equivalente do sinal resultante em cada caso, e explique.
